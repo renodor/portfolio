@@ -1,3 +1,8 @@
+<%= cl_image_tag @project.cover_photo.key %>
 <p><%= @project.name %></p>
 <p><%= @project.description %></p>
 <p><%= @project.url %></p>
+
+<% @project.photos.each do |photo| %>
+  <%= cl_image_tag photo.key %>
+<% end %>
