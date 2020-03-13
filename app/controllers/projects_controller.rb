@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
-    @odd_projects = Project.where('id % 2 != 0')
-    @even_projects = Project.where('id % 2 = 0')
+    @odd_projects = @projects.select { |project| @projects.index(project).even? }
+    @even_projects = @projects.select { |project| @projects.index(project).odd? }
   end
 
   def show

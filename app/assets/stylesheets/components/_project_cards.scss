@@ -1,12 +1,12 @@
 .project-cards {
   display:grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 30px;
+  grid-column-gap: 50px;
 }
 
 .project-column {
   display:grid;
-  grid-row-gap: 30px;
+  grid-row-gap: 50px;
   .project-card {
     border: 1px solid $light-gray;
     border-radius: 4px;
