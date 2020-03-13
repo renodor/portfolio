@@ -1,5 +1,32 @@
-<% @projects.each do |project| %>
-  <p><%= project.name %></p>
-  <p><%= project.description %></p>
-  <p><%= project.url %></p>
-<%end%>
+<div class="container">
+  <div class="intro">
+    <div class="intro-left">
+      <h1>renodor</h1>
+    </div>
+    <div class="intro-right">
+      <h2>Digital Marketing Specialist & Fullstack Web Developer</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, modi!</p>
+    </div>
+  </div>
+
+
+  <div class="project-cards">
+    <div class="project-column odd">
+      <% @odd_projects.each do |project| %>
+          <div class="project-card">
+            <h3><%= project.name %></h3>
+            <%= cl_image_tag project.cover_photo.key, width: 400, height: 300, crop: :fill  %>
+          </div>
+      <% end %>
+    </div>
+
+    <div class="project-column even">
+      <% @even_projects.each do |project| %>
+          <div class="project-card">
+            <h3><%= project.name %></h3>
+            <%= cl_image_tag project.cover_photo.key, width: 400, height: 300, crop: :fill  %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
