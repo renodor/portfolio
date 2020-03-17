@@ -1,0 +1,32 @@
+.service {
+  background-color:white;
+  flex-basis: 20%;
+  text-align: center;
+  padding: 30px;
+  margin: 0px 10px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  max-width: 170px;
+  border-radius: 5px;
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+
+#services {
+  margin-top: 50px;
+  padding-top:50px;
+}
+
+@media (min-width: 100px) and (max-width: 767px) {
+  .service-cards {
+    flex-direction: column;
+  }
+
+  .service {
+    margin: 10px;
+  }
+  #services {
+    margin-top: 0px;
+  }
+}
