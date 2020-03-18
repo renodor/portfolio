@@ -7,6 +7,7 @@
   }
   h1 {
     margin-bottom: 50px;
+    text-shadow: 4px 2px 1px $green;
   }
 }
 
@@ -25,6 +26,16 @@
 @media (min-width: 100px) and (max-width: 767px) {
   .intro {
     margin-top: 10px;
-    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+  h1 {
+    text-align: center;
+  }
+
+  .intro-right {
+    img {
+      margin: 0 auto;
+      max-width: 300px;
+    }
   }
 }

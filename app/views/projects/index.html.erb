@@ -15,6 +15,7 @@
 
 
   <div class="section" id="services">
+    <h2 class="titles">Services</h2>
     <div class="service-cards simple-flexbox">
       <div class="service">
         <i class="fas fa-code"></i><br><p>Web<br>Development</p>
@@ -28,13 +29,22 @@
     </div>
   </div>
   <div class="section" id="works">
+    <h2 class="titles translate-150">Projects</h2>
     <div class="project-cards">
       <% @projects.reverse.each do |project| %>
           <div class="project-card">
-            <h3><%= project.name %></h3>
+            <h3><%= project.name %> <i class="fas fa-arrow-right"></i></h3>
             <%= image_tag(project.id.to_s) %>
           </div>
       <% end %>
+    </div>
+  </div>
+
+  <div class="section" id="contact">
+    <div class="social">
+      <i class="fab fa-linkedin-in"></i>
+      <i class="fab fa-github"></i>
+      <i class="fab fa-twitter"></i>
     </div>
   </div>
 
