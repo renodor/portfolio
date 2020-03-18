@@ -5,13 +5,17 @@
   .intro-right {
     flex-basis: 50%;
   }
+  h1 {
+    margin-bottom: 50px;
+  }
 }
 
 .intro-right {
   display: flex;
   flex-direction: column;
   img {
-    margin: 0 auto;
+    margin: -30px auto 0 auto;
+    width: 80%;
   }
   h2 {
     margin-top: -40px;
