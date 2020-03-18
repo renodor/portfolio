@@ -1,25 +1,43 @@
 .project-cards {
   display:grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 170px;
+  grid-column-gap: 40px;
+  grid-row-gap: 190px;
 }
 
 .project-card {
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, .2);
+  // box-shadow: 0px 0px 3px rgba(0, 0, 0, .2);
   border: 1px solid rgba(0, 0, 0, .2);
   background-color: white;
   overflow: hidden;
   max-height: 500px;
   border-radius: 5px;
+  transition: background 250ms ease;
   h3 {
-    padding: 20px;
+    padding: 40px;
+    // color: #737373;
+    color: #323232;
+    transition: transform 250ms ease;
   }
   img {
-    width:100%;
+    margin-top: 50px;
+    transform: translate(-6%) rotate(-10deg);
+    transition: all 250ms ease;
   }
 
 }
+
+.project-card:hover {
+  // background-color: #f7f7f7;
+  background-color: #323232;
+  h3 {
+    color: white;
+  }
+  img {
+    transform: translate(-6%, -10%) rotate(-10deg);
+  }
+}
+
 
 .project-card:nth-of-type(odd) {
   margin-top: -150px;
