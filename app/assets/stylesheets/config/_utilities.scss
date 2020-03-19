@@ -17,3 +17,18 @@
 .section {
   padding-top: 50px;
 }
+
+#contact {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+@media (min-width: 100px) and (max-width: 767px) {
+  .translate-150 {
+    transform: none;
+  }
+
+  #contact {
+    margin-bottom: 50px;
+  }
+}

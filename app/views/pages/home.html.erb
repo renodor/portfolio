@@ -4,8 +4,8 @@
     <div class="intro-left simple-flexbox">
       <div>
         <h1>renodor</h1>
-        <h2>Digital Marketing Specialist & Fullstack Web Developer</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, modi!</p>
+        <h2>Fullstack Web Developer & Digital Marketing Specialist</h2>
+        <p>I build cool web applications, and I have a strong experience in digital marketing so I can help you to develop and promote your digital content. I also love to draw nice illustrations!</p>
 
       </div>
     </div>
@@ -34,7 +34,7 @@
       <% @projects.reverse.each do |project| %>
           <div class="project-card">
             <h3><%= project.name %> <i class="fas fa-arrow-right"></i></h3>
-            <%= image_tag(project.id.to_s) %>
+            <%= cl_image_tag project.cover_photo.key %>
           </div>
       <% end %>
     </div>
