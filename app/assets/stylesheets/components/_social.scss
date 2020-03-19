@@ -1,8 +1,15 @@
 .social {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-item: center;
+  margin: 30px 0;
   i {
-    font-size: 50px;
+    transition: color 150ms ease;
+    font-size: 30px;
+    margin: 0 10px;
   }
+}
+
+.social i:hover {
+  color: $green;
 }

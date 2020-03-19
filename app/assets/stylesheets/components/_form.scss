@@ -1,0 +1,15 @@
+.form-control {
+  border: 2px solid $gray;
+  border-radius: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: box-shadow border-color 250ms ease;
+  &:focus {
+    border-color: $gray;
+    box-shadow: 6px 4px 1px $gray;
+  }
+}
+
+textarea.form-control {
+  height: 200px;
+}

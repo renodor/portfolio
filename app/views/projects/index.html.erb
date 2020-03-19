@@ -28,7 +28,7 @@
       </div>
     </div>
   </div>
-  <div class="section" id="works">
+  <div class="section" id="projects">
     <h2 class="titles translate-150">Projects</h2>
     <div class="project-cards">
       <% @projects.reverse.each do |project| %>
@@ -46,6 +46,26 @@
       <i class="fab fa-github"></i>
       <i class="fab fa-twitter"></i>
     </div>
+    <div class="contact-form">
+
+
+      <%= form_with do %>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    <% end %>
   </div>
 
 </div>
