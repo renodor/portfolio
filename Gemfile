@@ -32,6 +32,9 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
+# Postmark mailer
+gem 'postmark-rails'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
