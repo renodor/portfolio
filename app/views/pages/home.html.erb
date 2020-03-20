@@ -31,7 +31,7 @@
   <div class="section" id="projects">
     <h2 class="title translate-150">Projects</h2>
     <div class="project-cards">
-      <% @projects.reverse.each do |project| %>
+      <% @projects.each do |project| %>
           <div class="project-card">
             <div class="project-header">
               <h3><%= project.name %></h3>
@@ -83,4 +83,3 @@
     </div>
   </div>
 </div>
-

@@ -77,6 +77,37 @@
     grid-gap: 20px;
   }
 
+  .project-card {
+    box-shadow: 6px 4px 1px #61e786;
+    h3 {
+      padding-left: 15px;
+    }
+    img {
+      border-top: 2px solid $gray;
+      transform: translate(-6%, 10%) rotate(-10deg);
+    }
+    i {
+      color: $gray;
+      transform: translate(0, 0);
+    }
+  }
+
+  .project-card:hover {
+    background-color: white;
+    box-shadow: none;
+    h3 {
+      color: $gray;
+      padding-left: 15px;
+    }
+    img {
+      transform: translate(-6%, 10%) rotate(-10deg);
+    }
+    i {
+      color: $gray;
+      transform: translate(0, 0);
+    }
+  }
+
 
   .project-card:nth-of-type(odd),
   .project-card:nth-of-type(even) {
