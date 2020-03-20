@@ -1,12 +1,26 @@
 .form-control {
   border: 2px solid $gray;
   border-radius: 5px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+  color: $gray;
   transition: box-shadow border-color 250ms ease;
   &:focus {
     border-color: $gray;
     box-shadow: 6px 4px 1px $gray;
+  }
+  &::placeholder {
+    font-weight: lighter;
+  }
+}
+
+.form-group-error {
+  .form-control {
+    background-color: rgba(97,231,134,.1)
+  }
+  span {
+    font-size: smaller;
   }
 }
 

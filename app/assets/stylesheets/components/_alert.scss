@@ -23,6 +23,10 @@
 .close:not(:disabled):not(.disabled):focus {
   opacity: 1;
 }
+.close span {
+  font-size: 40px;
+  font-weight: normal;
+}
 
 .close:hover span {
   color: $green;
@@ -32,6 +36,8 @@
   padding-right: 20px;
   .close {
     position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
