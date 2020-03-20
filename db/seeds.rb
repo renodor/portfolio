@@ -33,7 +33,7 @@ cover_photo = URI.open('https://res.cloudinary.com/detkhu57i/image/upload/v15846
 p4.cover_photo.attach(io: cover_photo, filename: "ohlala-panama.png", content_type: "image/png")
 p4.save!
 
-p5 = Project.new(name: "Salvamimaquina", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, architecto necessitatibus minima nesciunt obcaecati ipsa natus.", url: "www.exemple.com")
+p5 = Project.new(name: "Salva Mi Maquina", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, architecto necessitatibus minima nesciunt obcaecati ipsa natus.", url: "www.exemple.com")
 cover_photo = URI.open('https://res.cloudinary.com/detkhu57i/image/upload/v1584630450/portfolio/salvamimaquina_hkbj2g.png')
 p5.cover_photo.attach(io: cover_photo, filename: "salvamimaquina.png", content_type: "image/png")
 p5.save!

@@ -1,3 +1,9 @@
+#projects {
+  margin-top: 50px;
+  padding-top: 200px;
+  padding-bottom: 50px;
+}
+
 .project-cards {
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -11,21 +17,24 @@
   overflow: hidden;
   border-radius: 5px;
   transition: all 250ms ease;
+  position: relative;
   h3 {
-    padding: 40px 20px 20px 20px;
     color: #323232;
-    transition: transform 250ms ease;
-
+    flex-grow: 1;
+    transition: padding 250ms ease;
+    margin-bottom: 0;
+    max-height: 33px;
   }
   img {
     width: 116%;
-    margin-top: 50px;
+    margin-top: 20px;
     transform: translate(-6%, 20%) rotate(-10deg);
     transition: all 250ms ease;
   }
   i {
     color: transparent;
-    margin-left: 5px;
+    transform: translate(0, -100%);
+    padding-left: 10px;
     font-size: 20px;
     transition: transform 350ms ease;
   }
@@ -36,14 +45,14 @@
   box-shadow: 6px 4px 1px $green;
   h3 {
     color: white;
-    transform: translate(5%);
+    padding-left: 15px;
   }
   img {
     transform: translate(-6%, 10%) rotate(-10deg);
   }
   i {
     color: white;
-    transform: translate(50%);
+    transform: translate(0, 0);
   }
 }
 
@@ -56,10 +65,10 @@
   margin-bottom: -150px;
 }
 
-#projects {
-  margin-top: 50px;
-  padding-top: 200px;
-  padding-bottom: 50px;
+.project-header {
+  padding: 40px 35px 20px 20px;
+  display:flex;
+  align-items: center;
 }
 
 @media (min-width: 100px) and (max-width: 767px) {
@@ -80,4 +89,3 @@
     padding-bottom: 0;
   }
 }
-
