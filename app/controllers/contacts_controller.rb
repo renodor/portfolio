@@ -4,7 +4,8 @@ class ContactsController < ApplicationController
 
     if @contact.save
       UserMailer.general_message(@contact).deliver
-      redirect_to root_path(flash: "Thank you future partner! I will come back to you shortly.")
+      flash.notice = "Thank you future partner! I will come back to you shortly."
+      redirect_to root_path
     else
       render :new
     end
