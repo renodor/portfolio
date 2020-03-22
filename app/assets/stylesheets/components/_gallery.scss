@@ -13,6 +13,9 @@
   .modal-dialog {
     max-width: none;
   }
+  .modal {
+    display: none!important;
+  }
   .modal.show {
     display:flex!important;
   }
