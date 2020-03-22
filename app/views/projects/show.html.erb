@@ -11,9 +11,9 @@
     </ul>
 
     <p><b>Technologie used</b></p>
-    <ul class="list-unstyled">
-      <span>HTML</span> <span>CSS</span> <span>Ruby</span> <span>Rails</span>
-    </ul>
+    <% @project.technologies.each do |technology| %>
+      <span><%= technology %></span>
+    <% end %>
   </div>
   <div class="project-show-images">
     <p class="cover-photo"><%= cl_image_tag @project.cover_photo.key %></p>

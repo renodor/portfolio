@@ -8,6 +8,7 @@
         <th>URL</th>
         <th>Order</th>
         <th>Services</th>
+        <th>Techs</th>
         <th>Cover Photo</th>
         <th>Photos</th>
         <th>Edit</th>
@@ -25,6 +26,11 @@
               <% if project.web_development %><i class="fas fa-code"></i><% end %>
               <% if project.marketing %><i class="fas fa-chart-bar"></i><% end %>
               <% if project.graphic_design %><i class="fas fa-pencil-alt"></i><% end %>
+          </td>
+          <td>
+            <% project.technologies.each do |technology| %>
+              <%= technology %>
+            <% end %>
           </td>
           <td><a target="_blank" href="<%= cl_image_path project.cover_photo.key %>">cover photo</a></td>
           <td>
