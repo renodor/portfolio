@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @projects = Project.all.order(:id).reverse
+    @projects = Project.all.order(:order)
     @contact = Contact.new
     if params[:contact_info]
       @contact.name = params[:contact_info][:name] if params[:contact_info][:name]

@@ -1,25 +1,27 @@
-<div class="mx-5">
+<div class="mx-5 mb-5">
   <table class="project-index">
     <thead> <!-- table head -->
       <tr>
-         <th>Name</th>
-         <th>Description</th>
-         <th>URL</th>
-         <th>Order</th>
-         <th>Services</th>
-         <th>Cover Photo</th>
-         <th>Photos</th>
-         <th>Edit</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>URL</th>
+        <th>Order</th>
+        <th>Services</th>
+        <th>Cover Photo</th>
+        <th>Photos</th>
+        <th>Edit</th>
       </tr> <!-- table row -->
     </thead>
     <tbody>
-      <% @projects.reverse.each do |project| %>
+      <% @projects.each do |project| %>
         <tr>
+          <td><%= project.id %></td>
           <td><%= project.name %></td>
           <td><%= project.description %></td>
           <td><%= project.url %></td>
-          <td><%= project.order %></td>
-          <td>
+          <td class="text-center"><%= project.order %></td>
+          <td class="text-center">
               <% if project.web_development %><i class="fas fa-code"></i><% end %>
               <% if project.marketing %><i class="fas fa-chart-bar"></i><% end %>
               <% if project.graphic_design %><i class="fas fa-pencil-alt"></i><% end %>
@@ -30,7 +32,7 @@
               <%= photo %>
             <% end %>
           </td>
-          <td>edit</td>
+          <td><%= link_to "edit", edit_project_path(project) %></td>
         </tr>
       <% end %>
     </tbody>

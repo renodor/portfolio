@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.all.order(:order)
   end
 
   def show
@@ -20,9 +20,19 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    @project.update(project_params)
+    redirect_to projects_path
+  end
+
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :url, :cover_photo, photos: [])
+    params.require(:project).permit(:name, :description, :url, :order, :web_development, :marketing, :graphic_design, :cover_photo, photos: [])
   end
 end

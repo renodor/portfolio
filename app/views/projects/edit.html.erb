@@ -1,0 +1,14 @@
+<div class="container mb-5">
+  <%= simple_form_for(@project) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :url %>
+    <%= f.input :order %>
+    <%= f.input :web_development %>
+    <%= f.input :marketing %>
+    <%= f.input :graphic_design %>
+    <%= f.input :cover_photo, as: :file %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit %>
+  <% end %>
+</div>
