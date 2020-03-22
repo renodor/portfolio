@@ -35,12 +35,13 @@
 }
 
 .project-show .cover-photo {
-    img {
-      width: 100%;
-      max-width: 650px;
-      border-radius: 5px;
-    }
+  img {
+    width: 100%;
+    max-width: 650px;
+    border-radius: 5px;
   }
+}
+
 
 
 @media (min-width: 100px) and (max-width: 767px) {

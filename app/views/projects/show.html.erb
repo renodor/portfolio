@@ -30,19 +30,23 @@
 <% else %>
   <div class="container project-show-gallery">
     <h2 class="title"><%= @project.name %></h2>
-    <% @project.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, class: 'thumbnail', 'data-toggle'=> 'modal', 'data-target' => "#photo-#{photo.key}" %>
-      <!-- Modal -->
-      <div class="modal fade" id="photo-<%= photo.key %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-body">
-                <%= cl_image_tag photo.key, class: 'illustration' %>
+    <div class="gallery-grid">
+      <% @project.photos.each do |photo| %>
+        <div class="gallery-item">
+          <%= cl_image_tag photo.key, class: 'thumbnail', 'data-toggle'=> 'modal', 'data-target' => "#photo-#{photo.key}" %>
+          <!-- Modal -->
+          <div class="modal fade" id="photo-<%= photo.key %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <%= cl_image_tag photo.key, class: 'illustration' %>
+                  </div>
+                </div>
               </div>
-            </div>
           </div>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 <% end %>
 
