@@ -1,72 +1,39 @@
-<div class="container">
-  <div class="intro">
-    <div class="intro-left simple-flexbox">
-      <div>
-        <h1>renodor</h1>
-        <h2>Digital Marketing Specialist & Fullstack Web Developer</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, modi!</p>
-
-      </div>
-    </div>
-    <div class="intro-right">
-      <%= image_tag("renodor-avatar.png") %>
-    </div>
-  </div>
-
-
-  <div class="section" id="services">
-    <h2 class="titles">Services</h2>
-    <div class="service-cards simple-flexbox">
-      <div class="service">
-        <i class="fas fa-code"></i><br><p>Web<br>Development</p>
-      </div>
-      <div class="service">
-        <i class="fas fa-chart-bar"></i><br><p>Digital<br>Marketing</p>
-      </div>
-      <div class="service">
-        <i class="fas fa-pencil-alt"></i><br><p>Graphic<br>Design</p>
-      </div>
-    </div>
-  </div>
-  <div class="section" id="projects">
-    <h2 class="titles translate-150">Projects</h2>
-    <div class="project-cards">
+<div class="mx-5">
+  <table class="project-index">
+    <thead> <!-- table head -->
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>URL</th>
+         <th>Order</th>
+         <th>Services</th>
+         <th>Cover Photo</th>
+         <th>Photos</th>
+         <th>Edit</th>
+      </tr> <!-- table row -->
+    </thead>
+    <tbody>
       <% @projects.reverse.each do |project| %>
-          <div class="project-card">
-            <h3><%= project.name %> <i class="fas fa-arrow-right"></i></h3>
-            <%= image_tag(project.id.to_s) %>
-          </div>
+        <tr>
+          <td><%= project.name %></td>
+          <td><%= project.description %></td>
+          <td><%= project.url %></td>
+          <td><%= project.order %></td>
+          <td>
+              <% if project.web_development %><i class="fas fa-code"></i><% end %>
+              <% if project.marketing %><i class="fas fa-chart-bar"></i><% end %>
+              <% if project.graphic_design %><i class="fas fa-pencil-alt"></i><% end %>
+          </td>
+          <td><a target="_blank" href="<%= cl_image_path project.cover_photo.key %>">cover photo</a></td>
+          <td>
+            <% project.photos.each do |photo| %>
+              <%= photo %>
+            <% end %>
+          </td>
+          <td>edit</td>
+        </tr>
       <% end %>
-    </div>
-  </div>
-
-  <div class="section" id="contact">
-    <div class="social">
-      <i class="fab fa-linkedin-in"></i>
-      <i class="fab fa-github"></i>
-      <i class="fab fa-twitter"></i>
-    </div>
-    <div class="contact-form">
-
-
-      <%= form_with do %>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    <% end %>
-  </div>
-
+    </tbody>
+    </table>
 </div>
 
