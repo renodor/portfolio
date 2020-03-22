@@ -1,30 +1,37 @@
-<div class="container project-show">
-  <div class="project-show-info">
-    <h2 class="title"><%= @project.name %></h2>
-    <p><i class="fas fa-external-link-alt"></i> <%= link_to "Visit website", @project.url, target: "_blank" %></p>
-    <p class="description"><%= raw @project.description %></p>
-    <p><b>What I did on this project</b></p>
-    <ul class="list-unstyled">
-      <% if @project.web_development %><li><i class="fas fa-code"></i> Web Development</li><% end %>
-      <% if @project.marketing %><li><i class="fas fa-chart-bar"></i> Digital Marketing</li><% end %>
-      <% if @project.graphic_design %><li><i class="fas fa-pencil-alt"></i> Graphic Design</li><% end %>
-    </ul>
+<% if @project.name != 'Illustrations' %>
+  <div class="container project-show">
+    <div class="project-show-info">
+      <h2 class="title"><%= @project.name %></h2>
+      <p><i class="fas fa-external-link-alt"></i> <%= link_to "Visit website", @project.url, target: "_blank" %></p>
+      <p class="description"><%= raw @project.description %></p>
+      <p><b>What I did on this project</b></p>
+      <ul class="list-unstyled">
+        <% if @project.web_development %><li><i class="fas fa-code"></i> Web Development</li><% end %>
+        <% if @project.marketing %><li><i class="fas fa-chart-bar"></i> Digital Marketing</li><% end %>
+        <% if @project.graphic_design %><li><i class="fas fa-pencil-alt"></i> Graphic Design</li><% end %>
+      </ul>
 
-    <p><b>Technologie used</b></p>
-    <% @project.technologies.each do |technology| %>
-      <span class="technology"><%= technology %></span>
-    <% end %>
-  </div>
-  <div class="project-show-images">
-    <p class="cover-photo">
-      <%= link_to @project.url, target: "_blank" do %>
-        <%= cl_image_tag @project.cover_photo.key %>
+      <p><b>Technologie used</b></p>
+      <% @project.technologies.each do |technology| %>
+        <span class="technology"><%= technology %></span>
       <% end %>
-    </p>
+    </div>
+    <div class="project-show-images">
+      <p class="cover-photo">
+        <%= link_to @project.url, target: "_blank" do %>
+          <%= cl_image_tag @project.cover_photo.key %>
+        <% end %>
+      </p>
+      <% @project.photos.each do |photo| %>
+        <%= cl_image_tag photo.key %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="container project-show-gallery">
+    <h2 class="title"><%= @project.name %></h2>
     <% @project.photos.each do |photo| %>
       <%= cl_image_tag photo.key %>
     <% end %>
   </div>
-
-
-</div>
+<% end %>
