@@ -9,10 +9,13 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @project.technologies = @project.technologies.join(',')
   end
 
   def create
-    @project = Project.new(project_params)
+    cleaned_params = project_params
+    cleaned_params[:technologies] = cleaned_params[:technologies].split(',')
+    @project = Project.new(cleaned_params)
     if @project.save
       redirect_to project_path(@project)
     else
@@ -22,11 +25,15 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    @project.technologies = @project.technologies.join(',')
   end
 
   def update
+    project_params[:technologies]
     @project = Project.find(params[:id])
-    @project.update(project_params)
+    cleaned_params = project_params
+    cleaned_params[:technologies] = cleaned_params[:technologies].split(',')
+    @project.update(cleaned_params)
     redirect_to project_path(@project)
   end
 
