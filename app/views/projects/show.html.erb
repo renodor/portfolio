@@ -5,18 +5,22 @@
     <p class="description"><%= raw @project.description %></p>
     <p><b>What I did on this project</b></p>
     <ul class="list-unstyled">
-      <% if @project.web_development %><li class="ml-3"><i class="fas fa-code"></i> Web Development</li><% end %>
-      <% if @project.marketing %><li class="ml-3"><i class="fas fa-chart-bar"></i> Digital Marketing</li><% end %>
-      <% if @project.graphic_design %><li class="ml-3"><i class="fas fa-pencil-alt"></i> Graphic Design</li><% end %>
+      <% if @project.web_development %><li><i class="fas fa-code"></i> Web Development</li><% end %>
+      <% if @project.marketing %><li><i class="fas fa-chart-bar"></i> Digital Marketing</li><% end %>
+      <% if @project.graphic_design %><li><i class="fas fa-pencil-alt"></i> Graphic Design</li><% end %>
     </ul>
 
     <p><b>Technologie used</b></p>
     <% @project.technologies.each do |technology| %>
-      <span><%= technology %></span>
+      <span class="technology"><%= technology %></span>
     <% end %>
   </div>
   <div class="project-show-images">
-    <p class="cover-photo"><%= cl_image_tag @project.cover_photo.key %></p>
+    <p class="cover-photo">
+      <%= link_to @project.url, target: "_blank" do %>
+        <%= cl_image_tag @project.cover_photo.key %>
+      <% end %>
+    </p>
     <% @project.photos.each do |photo| %>
       <%= cl_image_tag photo.key %>
     <% end %>

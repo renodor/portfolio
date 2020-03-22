@@ -1,6 +1,7 @@
 .project-show {
   display: flex;
   margin-top: 40px;
+  margin-bottom: 40px;
   h2 {
     margin-bottom: 10px;
   }
@@ -21,7 +22,10 @@
   .project-show-images {
     flex-basis: 60%;
   }
-  span {
+  ul {
+    margin-bottom: 2rem;
+  }
+  .technology {
     border: 2px solid $gray;
     border-radius: 5px;
     padding: 5px 10px;
@@ -37,3 +41,15 @@
       border-radius: 5px;
     }
   }
+
+
+@media (min-width: 100px) and (max-width: 767px) {
+  .project-show {
+    flex-direction: column;
+    margin-top: 30px;
+    .project-show-info {
+      margin-right: 0px;
+      margin-bottom: 30px;
+    }
+  }
+}
