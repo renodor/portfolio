@@ -17,8 +17,8 @@
       <% @projects.each do |project| %>
         <tr>
           <td><%= project.id %></td>
-          <td><%= project.name %></td>
-          <td><%= project.description %></td>
+          <td><%= link_to project.name, project_path(project) %></td>
+          <td><%= raw project.description %></td>
           <td><%= project.url %></td>
           <td class="text-center"><%= project.order %></td>
           <td class="text-center">

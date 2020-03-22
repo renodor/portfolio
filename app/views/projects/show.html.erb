@@ -1,8 +1,17 @@
-<%= cl_image_tag @project.cover_photo.key %>
-<p><%= @project.name %></p>
-<p><%= @project.description %></p>
-<p><%= @project.url %></p>
+<div class="container project-show">
+  <h2 class="title"><%= @project.name %></h2>
+  <p><i class="fas fa-external-link-alt"></i> <%= link_to "Visit website", @project.url, target: "_blank" %></p>
+  <p class="description"><%= raw @project.description %></p>
+  <p><b>What I did on this project</b></p>
+  <ul class="list-unstyled">
+    <% if @project.web_development %><li class="ml-3"><i class="fas fa-code"></i> Web Development</li><% end %>
+    <% if @project.marketing %><li class="ml-3"><i class="fas fa-chart-bar"></i> Digital Marketing</li><% end %>
+    <% if @project.graphic_design %><li class="ml-3"><i class="fas fa-pencil-alt"></i> Graphic Design</li><% end %>
+  </ul>
+  <p class="cover-photo"><%= cl_image_tag @project.cover_photo.key %></p>
 
-<% @project.photos.each do |photo| %>
-  <%= cl_image_tag photo.key %>
-<% end %>
+
+  <% @project.photos.each do |photo| %>
+    <%= cl_image_tag photo.key %>
+  <% end %>
+</div>
