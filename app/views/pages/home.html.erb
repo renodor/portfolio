@@ -40,6 +40,7 @@
               <% if project.graphic_design %><i class="fas fa-pencil-alt"></i> <% end %>
             </div>
             <%= cl_image_tag project.cover_photo.key %>
+            <%= link_to "", project_path(project) %>
           </div>
       <% end %>
     </div>

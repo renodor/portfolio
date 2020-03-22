@@ -1,4 +1,6 @@
 .project-show {
+  display: flex;
+  margin-top: 40px;
   h2 {
     margin-bottom: 10px;
   }
@@ -12,11 +14,24 @@
   .description {
     margin: 30px 0;
   }
+  .project-show-info {
+    flex-basis: 40%;
+    margin-right: 30px;
+  }
+  .project-show-images {
+    flex-basis: 60%;
+  }
+  span {
+    border: 2px solid $gray;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
 }
 
 .project-show .cover-photo {
     img {
       width: 100%;
       max-width: 650px;
+      border-radius: 5px;
     }
   }

@@ -38,6 +38,13 @@
     font-size: 20px;
     transition: transform 350ms ease;
   }
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 .project-card:hover {
