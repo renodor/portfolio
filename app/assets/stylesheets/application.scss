@@ -17,3 +17,10 @@
 html {
   scroll-behavior: smooth;
 }
+
+a {
+  color: $gray;
+  &:hover {
+    color: $gray;
+  }
+}

@@ -23,3 +23,6 @@ require("channels")
 // ----------------------------------------------------
 
 import "bootstrap";
+import { email } from 'components/email';
+
+email();
