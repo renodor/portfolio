@@ -15,9 +15,16 @@
   }
   .modal {
     display: none!important;
+    padding-left: 15px;
   }
   .modal.show {
     display:flex!important;
+  }
+  .modal-content {
+    border: 1px solid white;
+  }
+  .modal-body {
+    padding: 0px;
   }
   .illustration {
     max-width: 100%;
