@@ -26,9 +26,3 @@ import "bootstrap";
 import { email } from 'components/email';
 
 email();
-
-const modal = document.querySelector('.modal.show')
-
-// $(modal).on('show.bs.modal', function (e) {
-//   modal.style.display = "flex!important";
-// })
