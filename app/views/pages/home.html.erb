@@ -39,7 +39,7 @@
               <% if project.marketing %><i class="fas fa-chart-bar"></i> <% end %>
               <% if project.graphic_design %><i class="fas fa-pencil-alt"></i> <% end %>
             </div>
-            <%= cl_image_tag project.cover_photo.key %>
+            <%= cl_image_tag project.cover_photo.key, width: 686, crop: :fit %>
             <%= link_to "", project_path(project) %>
           </div>
       <% end %>
