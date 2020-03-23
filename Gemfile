@@ -35,6 +35,8 @@ gem 'simple_form'
 # Postmark mailer
 gem 'postmark-rails'
 
+gem 'devise'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
