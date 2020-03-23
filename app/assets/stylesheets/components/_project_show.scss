@@ -19,7 +19,7 @@
     flex-basis: 40%;
     margin-right: 30px;
   }
-  .project-show-images {
+  .project-show-cover-photo {
     flex-basis: 60%;
   }
   ul {
@@ -34,13 +34,28 @@
   }
 }
 
-.project-show .cover-photo {
+.project-show-cover-photo {
   img {
     width: 100%;
     max-width: 650px;
     border-radius: 5px;
   }
 }
+
+.project-show-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  .gallery-item {
+    text-align: center;
+  }
+  img {
+    max-height: 300px;
+    max-width: 100%;
+    border-radius: 5px;
+  }
+}
+
 
 
 
