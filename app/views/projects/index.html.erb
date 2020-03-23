@@ -34,8 +34,10 @@
           </td>
           <td><a target="_blank" href="<%= cl_image_path project.cover_photo.key %>">cover photo</a></td>
           <td>
-            <% project.photos.each do |photo| %>
-              <%= photo %>
+            <% project.photos.each_with_index do |photo, i| %>
+              <%= link_to (cl_image_path photo.key), target: "_blank" do %>
+                <%= i + 1 %>
+              <% end %>
             <% end %>
           </td>
           <td><%= link_to "edit", edit_project_path(project) %></td>
