@@ -1,1 +1,4 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# Portfolio
+
+My personal portfolio built with with with Rails 6.
+www.renodor.co
