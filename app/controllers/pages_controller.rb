@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @projects = Project.all.order(:order)
+    @projects = Project.where(published: true).order(:order)
     @contact = Contact.new
     if params[:contact_info]
       @contact.name = params[:contact_info][:name] if params[:contact_info][:name]

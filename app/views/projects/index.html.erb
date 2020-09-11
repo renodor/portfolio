@@ -3,6 +3,7 @@
     <thead> <!-- table head -->
       <tr>
         <th>Id</th>
+        <th>Published</th>
         <th>Name</th>
         <th>Description</th>
         <th>URL</th>
@@ -18,6 +19,12 @@
       <% @projects.each do |project| %>
         <tr>
           <td><%= project.id %></td>
+          <td><% if project.published %>
+                <i class="fas fa-check"></i>
+              <% else %>
+                <i class="fas fa-times"></i>
+              <% end %>
+          </td>
           <td><%= link_to project.name, project_path(project) %></td>
           <td><%= raw project.description %></td>
           <td><%= project.url %></td>

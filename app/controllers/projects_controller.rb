@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
-    @projects = Project.all.order(:order)
+    @projects = Project.order(:order)
   end
 
   def show
@@ -42,6 +42,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :url, :order, :web_development, :marketing, :graphic_design, :technologies, :cover_photo, photos: [])
+    params.require(:project).permit(:name, :description, :url, :order, :web_development, :marketing, :graphic_design, :technologies, :published, :cover_photo, photos: [])
   end
 end
