@@ -18,6 +18,11 @@
   .project-show-info {
     flex-basis: 40%;
     margin-right: 30px;
+
+    i {
+      width: 20px;
+      margin-right: 5px;
+    }
   }
   .project-show-cover-photo {
     flex-basis: 60%;

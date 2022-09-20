@@ -3,6 +3,7 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :url %>
+    <%= f.input :github_repo %>
     <%= f.input :order %>
     <%= f.input :service_ids, collection: Service.all, include_hidden: false, include_blank: false, input_html: { multiple: true } %>
     <%= f.input :technologies %>

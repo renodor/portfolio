@@ -33,9 +33,9 @@
           <div class="project-card">
             <div class="project-header">
               <h3><%= project.name %></h3>
-              <% if project.web_development %><i class="fas fa-code"></i> <% end %>
-              <% if project.marketing %><i class="fas fa-chart-bar"></i> <% end %>
-              <% if project.graphic_design %><i class="fas fa-pencil-alt"></i> <% end %>
+              <% project.services.each do |service| %>
+                <%= service.icon_tag %>
+              <% end %>
             </div>
             <%= cl_image_tag project.cover_photo.key, width: 686, crop: :fit %>
             <%= link_to "", project_path(project) %>
