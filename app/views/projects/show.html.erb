@@ -3,15 +3,15 @@
     <div class="project-show">
       <div class="project-show-info">
         <h2 class="title"><%= @project.name %></h2>
-        <% if @project.url != '' %>
+        <% if @project.url.present? %>
           <p><i class="fas fa-external-link-alt"></i> <%= link_to "Visit website", @project.url, target: "_blank" %></p>
         <% end %>
         <p class="description"><%= raw @project.description %></p>
         <p><b>What I did on this project</b></p>
         <ul class="list-unstyled">
-          <% if @project.web_development %><li><i class="fas fa-code"></i> Web Development</li><% end %>
-          <% if @project.marketing %><li><i class="fas fa-chart-bar"></i> Digital Marketing</li><% end %>
-          <% if @project.graphic_design %><li><i class="fas fa-pencil-alt"></i> Graphic Design</li><% end %>
+          <% @services.each do |service| %>
+            <li><i class="<%= service.icon %>"></i><%= service.name %></li>
+          <% end %>
         </ul>
 
         <p><b>Tools & Technology used</b></p>

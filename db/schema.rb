@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_08_115125) do
+ActiveRecord::Schema.define(version: 2022_09_20_102353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,12 +57,25 @@ ActiveRecord::Schema.define(version: 2022_06_08_115125) do
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "web_development", default: false
-    t.boolean "marketing", default: false
-    t.boolean "graphic_design", default: false
     t.integer "order"
     t.text "technologies", default: [], array: true
     t.boolean "published", default: true
+  end
+
+  create_table "projects_services", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "service_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_projects_services_on_project_id"
+    t.index ["service_id"], name: "index_projects_services_on_service_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "icon", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,4 +92,6 @@ ActiveRecord::Schema.define(version: 2022_06_08_115125) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "projects_services", "projects"
+  add_foreign_key "projects_services", "services"
 end

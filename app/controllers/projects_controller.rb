@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @services = @project.services
   end
 
   def new
@@ -42,6 +43,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :url, :order, :web_development, :marketing, :graphic_design, :technologies, :published, :cover_photo, photos: [])
+    params.require(:project).permit(:name, :description, :url, :order, :technologies, :published, :cover_photo, service_ids: [], photos: [])
   end
 end
