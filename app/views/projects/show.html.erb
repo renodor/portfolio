@@ -1,64 +1,6 @@
-<% if @project.name != 'Illustrations' %>
-  <div class="container">
-    <div class="project-show">
-      <div class="project-show-info">
-        <h2 class="title"><%= @project.name %></h2>
-        <% if @project.url.present? %>
-          <p><i class="fas fa-external-link-alt"></i> <%= link_to "Visit website", @project.url, target: "_blank" %></p>
-        <% end %>
-        <% if @project.github_repo.present? %>
-          <p><i class="fa-brands fa-github"></i> <%= link_to "Check Github repo", @project.github_repo_url, target: "_blank" %></p>
-        <% end %>
-        <p class="description"><%= raw @project.description %></p>
-        <p><b>What I did on this project</b></p>
-        <ul class="list-unstyled">
-          <% @services.each do |service| %>
-            <li><%= service.icon_tag %> <%= service.name %></li>
-          <% end %>
-        </ul>
-
-        <p><b>Tools & Technology used</b></p>
-        <% @project.technologies.each do |technology| %>
-          <span class="technology"><%= technology.name %></span>
-        <% end %>
-      </div>
-      <div class="project-show-cover-photo">
-        <%= link_to @project.url, target: "_blank" do %>
-          <%= cl_image_tag @project.cover_photo.key, width: 648, crop: :fit %>
-        <% end %>
-      </div>
-    </div>
-    <div class="project-show-photos">
-      <% @project.photos.each do |photo| %>
-        <div class="project-show-photo">
-          <%= cl_image_tag photo.key, height: 300, crop: :fit %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+<% if @project.web? %>
+  <%= render 'project', project: @project, services: @services, technologies: @technologies %>
 <% else %>
-  <div class="container project-show-gallery">
-    <h2 class="title"><%= @project.name %></h2>
-    <div class="gallery-grid">
-      <% @project.photos.each do |photo| %>
-        <div class="gallery-item">
-          <%= cl_image_tag photo.key, height: 370, crop: :fit, class: 'thumbnail', 'data-toggle'=> 'modal', 'data-target' => "#photo-#{photo.key}" %>
-          <!-- Modal -->
-          <div class="modal fade" id="photo-<%= photo.key %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <div class="modal-body">
-                  <%= cl_image_tag photo.key, class: 'illustration' %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <%= render 'illustrations', project: @project %>
 <% end %>
 
