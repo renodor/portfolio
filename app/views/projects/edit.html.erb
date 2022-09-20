@@ -5,8 +5,8 @@
     <%= f.input :url %>
     <%= f.input :github_repo %>
     <%= f.input :order %>
-    <%= f.input :service_ids, collection: Service.all, include_hidden: false, include_blank: false, input_html: { multiple: true } %>
-    <%= f.input :technologies %>
+    <%= f.input :service_ids, collection: @services, include_hidden: false, include_blank: false, input_html: { multiple: true } %>
+    <%= f.input :technology_ids, collection: @technologies, include_hidden: false, include_blank: false, input_html: { multiple: true } %>
     <%= f.input :cover_photo, as: :file %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.input :published %>

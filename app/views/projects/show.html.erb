@@ -19,7 +19,7 @@
 
         <p><b>Tools & Technology used</b></p>
         <% @project.technologies.each do |technology| %>
-          <span class="technology"><%= technology %></span>
+          <span class="technology"><%= technology.name %></span>
         <% end %>
       </div>
       <div class="project-show-cover-photo">
