@@ -11,7 +11,7 @@
       <p class="description"><%= raw project.description %></p>
       <p><b>What I did on this project</b></p>
       <ul class="list-unstyled">
-        <% services.each do |service| %>
+        <% project.services.each do |service| %>
           <li><%= service.icon_tag %> <%= service.name %></li>
         <% end %>
       </ul>
@@ -28,7 +28,7 @@
     </div>
   </div>
   <div class="project-show-photos">
-    <% project.photos.each do |photo| %>
+    <% project.photos.includes(:blob).each do |photo| %>
       <div class="project-show-photo">
         <%= cl_image_tag photo.key, height: 300, crop: :fit %>
       </div>

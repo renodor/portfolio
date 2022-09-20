@@ -2,7 +2,7 @@
   <div class="project-show-gallery">
     <h2 class="title"><%= project.name %></h2>
     <div class="gallery-grid">
-      <% project.photos.each do |photo| %>
+      <% project.photos.includes(:blob).each do |photo| %>
         <div class="gallery-item">
           <%= cl_image_tag photo.key, height: 370, crop: :fit, class: 'thumbnail', 'data-toggle'=> 'modal', 'data-target' => "#photo-#{photo.key}" %>
           <!-- Modal -->

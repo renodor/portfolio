@@ -7,7 +7,6 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @services = @project.services
   end
 
   def new

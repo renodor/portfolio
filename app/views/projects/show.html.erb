@@ -1,5 +1,5 @@
 <% if @project.web? %>
-  <%= render 'project', project: @project, services: @services, technologies: @technologies %>
+  <%= render 'project', project: @project %>
 <% else %>
   <%= render 'illustrations', project: @project %>
 <% end %>
