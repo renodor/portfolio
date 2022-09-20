@@ -25,15 +25,19 @@
   }
 }
 
+@media (max-width: 992px) {
+  .service-cards .service {
+    flex-basis: 50%;
+  }
+}
 
-@media (min-width: 100px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .service-cards {
     flex-direction: column;
-  }
-
-  .service {
-    margin: 10px;
-    min-width: 200px;
+    .service {
+      margin: 10px;
+      width: 100%;
+    }
   }
 
   #services {
