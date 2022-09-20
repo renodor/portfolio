@@ -1,20 +1,31 @@
-.avatar {
-  width: 40px;
-  border-radius: 50%;
+.avatars {
+  position: relative;
+  img {
+    width: 80%;
+  }
+
+  .avatar-strokes {
+    position: absolute;
+  }
+
+  .avatar-shadows {
+    animation-name: shadow_rotation;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
 }
-.avatar-large {
-  width: 56px;
-  border-radius: 50%;
-}
-.avatar-bordered {
-  width: 40px;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
-}
-.avatar-square {
-  width: 40px;
-  border-radius: 0px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
+
+@keyframes shadow_rotation {
+  0%   {
+    filter: hue-rotate(-30deg) blur(2px);
+    transform: translate(0px);
+  }
+  50%  {
+    filter: hue-rotate(0deg) blur(0px);
+  }
+  100% {
+    filter: hue-rotate(30deg) blur(2px);
+    transform: translate(1px);
+  }
 }

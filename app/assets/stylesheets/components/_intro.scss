@@ -13,14 +13,8 @@
 
 .intro-right {
   display: flex;
-  flex-direction: column;
-  img {
-    margin: -30px auto 0 auto;
-    width: 80%;
-  }
-  h2 {
-    margin-top: -40px;
-  }
+  justify-content: center;
+  align-items: flex-start;
 }
 
 @media (min-width: 100px) and (max-width: 767px) {
