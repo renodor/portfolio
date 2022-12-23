@@ -4,10 +4,22 @@
     <%= f.input :description %>
     <%= f.input :url %>
     <%= f.input :order %>
-    <%= f.input :web_development %>
-    <%= f.input :marketing %>
-    <%= f.input :graphic_design %>
-    <%= f.input :technologies %>
+    <%=
+      f.input :service_ids,
+      label: 'Services',
+      collection: @services,
+      include_hidden: false,
+      include_blank: false,
+      input_html: { multiple: true }
+    %>
+    <%=
+      f.input :technology_ids,
+      label: 'Technologies',
+      collection: @technologies,
+      include_hidden: false,
+      include_blank: false,
+      input_html: { multiple: true }
+    %>
     <%= f.input :cover_photo, as: :file, label: 'Cover Photo (686*515px)' %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit %>

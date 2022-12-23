@@ -11,7 +11,8 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    @project.technologies = @project.technologies.join(',')
+    @services = Service.all
+    @technologies = Technology.all
   end
 
   def create
