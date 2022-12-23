@@ -16,9 +16,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    cleaned_params = project_params
-    cleaned_params[:technologies] = cleaned_params[:technologies].split(',')
-    @project = Project.new(cleaned_params)
+    @project = Project.new(project_params)
     if @project.save
       redirect_to project_path(@project)
     else
@@ -41,6 +39,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :url, :github_repo, :order, :technologies, :published, :cover_photo, service_ids: [], technology_ids: [], photos: [])
+    params.require(:project).permit(:name, :description, :url, :github_repo, :order, :published, :cover_photo, service_ids: [], technology_ids: [], photos: [])
   end
 end
