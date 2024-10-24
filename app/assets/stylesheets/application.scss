@@ -1,25 +1,25 @@
-// Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
-@import "config/utilities";
+// // Graphical variables
+// @import "config/fonts";
+// @import "config/colors";
+// @import "config/bootstrap_variables";
+// @import "config/utilities";
 
-// External libraries
-@import "bootstrap/scss/bootstrap";
-@import "font-awesome";
+// // External libraries
+// @import "bootstrap/scss/bootstrap";
+// @import "font-awesome";
 
-// Your CSS partials
-@import "components/index";
-@import "pages/index";
+// // Your CSS partials
+// @import "components/index";
+// @import "pages/index";
 
 
-html {
-  scroll-behavior: smooth;
-}
+// html {
+//   scroll-behavior: smooth;
+// }
 
-a {
-  color: $gray;
-  &:hover {
-    color: $gray;
-  }
-}
+// a {
+//   color: $gray;
+//   &:hover {
+//     color: $gray;
+//   }
+// }
