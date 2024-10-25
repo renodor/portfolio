@@ -1,23 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Home", root_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Services", root_path(anchor: 'services'), class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Projects", root_path(anchor: 'projects'), class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Contact", root_path(anchor: 'contact'), class: "nav-link" %>
-      </li>
-    </ul>
-  </div>
+<div class="px-4 py-2 flex justify-center w-full">
+  <%= link_to "Home", root_path, class: "flex items-center p-2 text-black/50 hover:text-black/70" %>
+  <%= link_to "Services", root_path(anchor: 'services'), class: "flex items-center p-2 text-black/50 hover:text-black/70" %>
+  <%= link_to "Projects", root_path(anchor: 'projects'), class: "flex items-center p-2 text-black/50 hover:text-black/70" %>
+  <%= link_to "Contact", root_path(anchor: 'contact'), class: "flex items-center p-2 text-black/50 hover:text-black/70" %>
 </div>

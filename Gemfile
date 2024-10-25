@@ -30,7 +30,7 @@ gem 'tailwindcss-rails', '~> 3.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'cloudinary', '~> 1.22'
+gem 'cloudinary', '~> 2.2'
 
 group :development, :test do
   gem 'pry-byebug'
