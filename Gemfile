@@ -5,12 +5,12 @@ ruby '3.3.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 7.2', '>= 7.2.1'
+gem 'sprockets-rails'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.3'
-# Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 
@@ -18,8 +18,6 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass', '~> 6.1.1'
-gem 'simple_form'
 
 # Postmark mailer
 gem 'postmark-rails'
@@ -28,6 +26,9 @@ gem 'devise'
 
 gem 'tailwindcss-rails', '~> 3.0'
 
+gem "importmap-rails", "~> 2.0"
+gem 'stimulus-rails'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'cloudinary', '~> 2.2'
@@ -35,7 +36,6 @@ gem 'cloudinary', '~> 2.2'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'dotenv-rails'
   gem 'letter_opener'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

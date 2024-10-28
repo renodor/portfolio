@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :projects, only: [:show, :new, :create, :index, :edit, :update, :show]
-  resources :contacts, only: :create
+
+  post '/contact', to: 'pages#create_contact'
+
+  resources :projects, only: %i[index show new create edit update]
 end

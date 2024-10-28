@@ -1,14 +1,14 @@
 <% if notice %>
-    <div class="alert alert-warning alert-dismissible centered-flexbox" role="alert">
-      <p><%= notice %></p>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <div
+    data-controller="flashes"
+    class="sticky top-0 w-full flex items-center border border-dark-gray border-2 bg-white shadow-flashy-green z-10"
+  >
+    <p class="px-5 py-4 flex-grow md:text-center"><%= notice %></p>
+    <div class="px-5 py-4 cursor-pointer group" data-action="click->flashes#close">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 group-hover:stroke-flashy-green">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
     </div>
-<% end %>
-
-<% if alert %>
-  <div class="alert alert-info alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= alert %>
   </div>
 <% end %>
 

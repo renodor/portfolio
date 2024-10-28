@@ -1,15 +1,24 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!
 
   def home
     @projects = Project.where(published: true).order(:order).includes(:services, cover_photo_attachment: :blob)
     @contact = Contact.new
-    if params[:contact_info]
-      @contact.name = params[:contact_info][:name] if params[:contact_info][:name]
-      @contact.email = params[:contact_info][:email] if params[:contact_info][:email]
-      @contact.message = params[:contact_info][:message] if params[:contact_info][:message]
-      @email_errors =  params[:contact_info][:errors][:email]
-      @message_errors =  params[:contact_info][:errors][:message]
+  end
+
+  def create_contact
+    @contact = Contact.new(contact_params)
+    if @contact.save
+      UserMailer.general_message(@contact).deliver
+      flash.notice = "Thank you future partner! I will come back to you shortly."
+      redirect_to root_path(anchor: '')
+    else
+      @projects = Project.where(published: true).order(:order).includes(:services, cover_photo_attachment: :blob)
+      render :home
     end
+  end
+
+  def contact_params
+    params.require(:contact).permit(:name, :email, :message)
   end
 end
