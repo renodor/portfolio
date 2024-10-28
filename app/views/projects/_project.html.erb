@@ -1,37 +1,43 @@
-<div class="container">
-  <div class="project-show">
-    <div class="project-show-info">
-      <h2 class="title"><%= @project.name %></h2>
+<div class="mt-10">
+  <div class="flex flex-col md:flex-row gap-8 mb-10">
+    <div class="md:w-2/5">
+      <h2 class="mb-4 drop-shadow-flashy-green-sm text-3xl"><%= @project.name %></h2>
       <% if project.url.present? %>
-        <p><i class="fas fa-external-link-alt"></i> <%= link_to "Visit website", project.url, target: "_blank" %></p>
+        <div class="flex items-center gap-2 mb-4">
+          <%= inline_svg_tag('icons/arrow_top_right_on_square.svg', class: 'size-5') %>
+          <%= link_to "Visit website", project.url, target: "_blank", class: "underline" %>
+        </div>
       <% end %>
       <% if project.github_repo.present? %>
-        <p><i class="fa-brands fa-github"></i> <%= link_to "Check Github repo", project.github_repo_url, target: "_blank" %></p>
+        <div class="flex items-center gap-2">
+          <%= inline_svg_tag('icons/github.svg', class: 'size-5') %>
+          <%= link_to "Check Github repo", project.github_repo_url, target: "_blank", class: "underline" %>
+        </div>
       <% end %>
-      <p class="description"><%= raw project.description %></p>
-      <p><b>What I did on this project</b></p>
-      <ul class="list-unstyled">
+      <p class="my-7"><%= raw project.description %></p>
+      <p class="mb-4"><b>What I did on this project</b></p>
+      <div class="mb-7">
         <% project.services.each do |service| %>
-          <li><%= service.icon_tag %> <%= service.name %></li>
+          <p class="flex items-center gap-2"><%= inline_svg_tag(service.icon, class: 'size-5') %> <%= service.name %></p>
         <% end %>
-      </ul>
+      </div>
 
-      <p><b>Tools & Technology used</b></p>
-      <% project.technologies.each do |technology| %>
-        <span class="technology"><%= technology.name %></span>
-      <% end %>
+      <p class="mb-4"><b>Tools & Technology used</b></p>
+      <div class="flex flex-wrap gap-2">
+        <% project.technologies.each do |technology| %>
+          <div class="py-1 px-2 border-2 border-dark-gray rounded-md"><%= technology.name %></div>
+        <% end %>
+      </div>
     </div>
-    <div class="project-show-cover-photo">
+    <div class="md:w-3/5">
       <%= link_to project.url, target: "_blank" do %>
-        <%= cl_image_tag project.cover_photo.key, width: 648, crop: :fit %>
+        <%= cl_image_tag project.cover_photo.key, width: 648, crop: :fit, class: "border border-1 border-gray-300 rounded-md" %>
       <% end %>
     </div>
   </div>
-  <div class="project-show-photos">
+  <div class="flex flex-wrap items-center gap-7">
     <% project.photos.includes(:blob).each do |photo| %>
-      <div class="project-show-photo">
-        <%= cl_image_tag photo.key, height: 300, crop: :fit %>
-      </div>
+      <%= cl_image_tag photo.key, height: 300, crop: :fit, class: "border border-1 border-gray-300 rounded-md" %>
     <% end %>
   </div>
 </div>
