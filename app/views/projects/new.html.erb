@@ -1,28 +1,27 @@
-<div class="container my-5">
-  <%= simple_form_for(@project) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :url %>
-    <%= f.input :github_repo %>
-    <%= f.input :order %>
+<div class="my-5">
+  <%= form_with model: @project, class: "flex flex-col gap-6" do |f| %>
+    <%= f.text_field :name, placeholder: "Name", class: "border border-dark-gray border-2 rounded-md" %>
+    <%= f.text_area :description, placeholder: "Description", class: "border border-dark-gray border-2 rounded-md h-72" %>
+    <%= f.text_field :url, placeholder: "Url", class: "border border-dark-gray border-2 rounded-md" %>
+    <%= f.text_field :github_repo, placeholder: "Github repo", class: "border border-dark-gray border-2 rounded-md" %>
+    <%= f.number_field :order, placeholder: "Order", class: "border border-dark-gray border-2 rounded-md" %>
     <%=
-      f.input :service_ids,
-      label: 'Services',
-      collection: @services,
-      include_hidden: false,
-      include_blank: false,
-      input_html: { multiple: true }
+      f.select :service_ids,
+      @services.map { |service| [service.name, service.id ] },
+      { multiple: true },
+      { class: "border border-dark-gray border-2 rounded-md" }
     %>
     <%=
-      f.input :technology_ids,
-      label: 'Technologies',
-      collection: @technologies,
-      include_hidden: false,
-      include_blank: false,
-      input_html: { multiple: true }
+      f.select :technology_ids,
+      @technologies.map { |tech| [tech.name, tech.id ] },
+      { multiple: true },
+      { class: "border border-dark-gray border-2 rounded-md" }
     %>
-    <%= f.input :cover_photo, as: :file, label: 'Cover Photo (686*515px)' %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit %>
+    <div class="flex flex-col">
+      <%= f.file_field :cover_photo, as: :file %>
+      <small>Cover Photo (686*515px)</small>
+    </div>
+    <%= f.file_field :photos, as: :file, multiple: true %>
+    <%= f.submit class: "w-full bg-flashy-green py-2 px-6 rounded-md cursor-pointer font-bold hover:shadow-flashy-dark transition duration-250" %>
   <% end %>
 </div>

@@ -324,7 +324,7 @@ DEPENDENCIES
   bullet
   byebug
   cloudinary (~> 2.2)
-  devise
+  devise (~> 4.9)
   importmap-rails (~> 2.0)
   inline_svg
   letter_opener
