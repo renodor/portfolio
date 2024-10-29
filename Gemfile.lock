@@ -206,7 +206,7 @@ GEM
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
-    puma (4.3.12)
+    puma (6.4.3)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.8)
@@ -333,7 +333,7 @@ DEPENDENCIES
   postmark-rails
   pry-byebug
   pry-rails
-  puma (~> 4.3)
+  puma (>= 6.4.3)
   rails (~> 7.2, >= 7.2.1)
   spring
   spring-watcher-listen (~> 2.1.0)
