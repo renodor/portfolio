@@ -14,7 +14,7 @@
           <%= link_to "Check Github repo", project.github_repo_url, target: "_blank", class: "underline" %>
         </div>
       <% end %>
-      <p class="my-7"><%= raw project.description %></p>
+      <div class="my-7"><%= raw project.description %></div>
       <p class="mb-4"><b>What I did on this project</b></p>
       <div class="mb-7">
         <% project.services.each do |service| %>
