@@ -7,6 +7,8 @@ class PagesController < ApplicationController
   end
 
   def create_contact
+    return if params[:contact][:content].present? # Honey pot CAPTCHA for spam bots
+
     @contact = Contact.new(contact_params)
     if @contact.save
       UserMailer.general_message(@contact).deliver
