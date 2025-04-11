@@ -4,8 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.4.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.2', '>= 7.2.1'
-gem 'sprockets-rails'
+gem 'rails', '~> 8.0', '>= 8.0.2'
+
+# The modern asset pipeline for Rails [https://github.com/rails/propshaft]
+gem "propshaft"
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -51,5 +53,4 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.1.0'
-  gem 'bullet'
 end
