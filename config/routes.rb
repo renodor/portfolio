@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # Needed for kamal
+  get "up" => "rails/health#show", as: :rails_health_check
+
   devise_for :users
   root to: 'pages#home'
 
