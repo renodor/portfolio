@@ -117,15 +117,7 @@ GEM
       multipart-post (~> 2)
     faraday-net_http (3.3.0)
       net-http
-    ffi (1.17.0-aarch64-linux-gnu)
-    ffi (1.17.0-aarch64-linux-musl)
-    ffi (1.17.0-arm-linux-gnu)
-    ffi (1.17.0-arm-linux-musl)
-    ffi (1.17.0-arm64-darwin)
-    ffi (1.17.0-x86-linux-gnu)
-    ffi (1.17.0-x86-linux-musl)
-    ffi (1.17.0-x86_64-linux-gnu)
-    ffi (1.17.0-x86_64-linux-musl)
+    ffi (1.17.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.6)
@@ -162,6 +154,7 @@ GEM
     marcel (1.0.4)
     method_source (1.1.0)
     mini_mime (1.1.5)
+    mini_portile2 (2.8.8)
     minitest (5.25.1)
     msgpack (1.7.3)
     multipart-post (2.4.1)
@@ -177,15 +170,8 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.3)
-    nokogiri (1.16.7-aarch64-linux)
-      racc (~> 1.4)
-    nokogiri (1.16.7-arm-linux)
-      racc (~> 1.4)
-    nokogiri (1.16.7-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.16.7-x86-linux)
-      racc (~> 1.4)
-    nokogiri (1.16.7-x86_64-linux)
+    nokogiri (1.16.7)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     ostruct (0.6.0)
@@ -345,7 +331,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 3.3.4p94
+   ruby 3.4.2p28
 
 BUNDLED WITH
    2.5.15
