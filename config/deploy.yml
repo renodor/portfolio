@@ -22,8 +22,7 @@ servers:
 proxy:
   ssl: true
   host: renodor.co
-  # Proxy connects to your container on port 80 by default.
-  # app_port: 3000
+  app_port: 3000
 
 # Credentials for your image host.
 registry:
