@@ -46,7 +46,7 @@ builder:
 #
 env:
   clear:
-    DB_HOST: portoflio-db
+    DB_HOST: portfolio-db
   secret:
     - RAILS_MASTER_KEY
     - POSTGRES_USER
